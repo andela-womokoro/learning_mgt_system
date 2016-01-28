@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('title', 'Dashboard')
+@section('title', 'Profile')
 
 @section('content')
-    <p>Dashboard</p>
+    <p>Profile</p>
 @endsection

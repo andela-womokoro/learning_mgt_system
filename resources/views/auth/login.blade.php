@@ -5,10 +5,18 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            @include(‘errors’)
             <div class="form-container">
                 <form method="post" action="/auth/login">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    {{ csrf_field() }}
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{  $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">

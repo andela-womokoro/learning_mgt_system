@@ -25,3 +25,10 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::controllers([
    'password' => 'Auth\PasswordController',
 ]);
+
+// Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'ViewsController@dashboard']);
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', 'ViewsController@dashboard');
+    Route::get('/profile', 'ViewsController@profile');
+});
