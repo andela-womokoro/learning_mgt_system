@@ -1,0 +1,93 @@
+body
+{
+    background-color: #e6e6e6;
+}
+
+.form-container
+{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.twitter, .facebook, .github
+{
+    font-size: 48px;
+}
+
+.twitter
+{
+    padding: 2px;
+    color: #55acee;
+}
+
+.github
+{
+    padding: 2px;
+    color: #444;
+}
+
+.facebook
+{
+    padding: 2px;
+    color: #3e5b99;
+}
+
+.header
+{
+    background-color: #fff;
+    border-radius: 0px;
+    border-bottom: 1px inset #ccc;
+}
+
+.footer
+{
+    background-color: #fff;
+    min-height: 100px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding :10px;
+    font-size: 12px;
+}
+
+li.dropdown:hover
+{
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+i.dropdown:active
+{
+    background-color: yellow;
+    color: #fff;
+}
+
+a.dropdown-toggle:hover{
+    color: white;
+}
+
+.dropdown-menu>li>a
+{
+    color: #1abc9c;
+}
+
+.dropdown-menu>li>a:hover
+{
+    color: #1abc9c;
+}
+
+.fa-user {
+    color: #1abc9c;
+    font-size: 1.5em;
+}
+
+/*
+.errors {
+    width:100%;
+    text-align: center;
+}
+*/
