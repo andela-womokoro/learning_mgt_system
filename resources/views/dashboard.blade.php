@@ -24,7 +24,7 @@
                             ?>
                             <div class="col-sm-4">
                                 <a href="/playback" class="thumbnail">
-                                  <img src="/images/video.png" alt="...">
+                                  <img src="http://i1.ytimg.com/vi/IsZxiIAYc9E/hqdefault.jpg" alt="...">
                                 </a>
                             </div>
                             <?php } ?>
