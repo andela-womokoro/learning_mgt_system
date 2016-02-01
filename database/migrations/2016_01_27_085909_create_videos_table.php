@@ -15,10 +15,10 @@ class CreateVideosTable extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('title', 10)->unique();
+            $table->string('title', 45)->unique();
             $table->string('category', 45);
             $table->string('description', 60);
-            $table->string('url', 45);
+            $table->string('url', 255);
             $table->integer('views')->unsigned()->default(0);
             $table->integer('likes')->unsigned()->default(0);
             $table->timestamps();

@@ -85,6 +85,11 @@ a.dropdown-toggle:hover{
     font-size: 1.5em;
 }
 
+.videos-grid {
+    border: 0px solid gray;
+    padding: 15px;
+}
+
 /*
 .errors {
     width:100%;

@@ -20,27 +20,27 @@
                     @endif
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+                        <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" maxlength="255">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password" maxlength="10">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Confirm Password</label>
-                        <input type="password" class="form-control" name="password_confirmation" placeholder="Password">
+                        <input type="password" class="form-control" name="password_confirmation" placeholder="Password" maxlength="10">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Username</label>
-                        <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username">
+                        <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username" maxlength="10">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">First name</label>
-                        <input type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" placeholder="First name">
+                        <input type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" placeholder="First name" maxlength="45">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Last name</label>
-                        <input type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" placeholder="Last name">
+                        <input type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" placeholder="Last name" maxlength="45">
                     </div>
                     <div class="checkbox">
                         <label>

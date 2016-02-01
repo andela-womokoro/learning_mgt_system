@@ -40,7 +40,7 @@
 
 <!-- Videos grid -->
 <div class="container-fluid">
-    <div class="row" style="border: 0px solid gray; padding: 15px;">
+    <div class="row videos-grid">
         <?php
         for($i = 0; $i < 6; $i++) {
         ?>
