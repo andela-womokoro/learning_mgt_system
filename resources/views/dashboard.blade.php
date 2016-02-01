@@ -23,7 +23,7 @@
                             for($i = 0; $i < 4; $i++) {
                             ?>
                             <div class="col-sm-4">
-                                <a href="#" class="thumbnail">
+                                <a href="/playback" class="thumbnail">
                                   <img src="/images/video.png" alt="...">
                                 </a>
                             </div>

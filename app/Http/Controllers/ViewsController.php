@@ -14,6 +14,11 @@ class ViewsController extends Controller
         return view('landing');
     }
 
+    public function playback()
+    {
+        return view('playback');
+    }
+
     public function login()
     {
         return view('login');
