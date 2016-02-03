@@ -19,40 +19,42 @@
                         </div>
                     @endif
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" maxlength="255">
+                        <label>Username</label>
+                        <input type="text" class="form-control" name="username" value="{{ old('username') }}" maxlength="10" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password" maxlength="10">
+                        <label>Email address</label>
+                        <input type="email" class="form-control" name="email" value="{{ old('email') }}" maxlength="255" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Confirm Password</label>
-                        <input type="password" class="form-control" name="password_confirmation" placeholder="Password" maxlength="10">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" maxlength="10" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Username</label>
-                        <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username" maxlength="10">
+                        <label>Confirm Password</label>
+                        <input type="password" class="form-control" name="password_confirmation" maxlength="10" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">First name</label>
-                        <input type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" placeholder="First name" maxlength="45">
+                        <label>First name</label>
+                        <input type="text" class="form-control" name="first_name" value="{{ old('first_name') }}"  maxlength="45" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Last name</label>
-                        <input type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" placeholder="Last name" maxlength="45">
+                        <label>Last name</label>
+                        <input type="text" class="form-control" name="last_name" value="{{ old('last_name') }}"  maxlength="45" required>
                     </div>
                     <div class="checkbox">
                         <label>
-                          <input type="checkbox"> I agree to the terms and conditions
+                          <input type="checkbox" name="agree" required> I agree to the terms and conditions
                         </label>
                     </div>
-                  <button type="submit" class="btn btn-success">Create account</button>
+                    <button type="submit" class="btn btn-success">Create account</button>
                 </form>
                 <br />
                 <br /> <br />
                 <P>Already have an account?</P>
-                <button type="" class="btn btn-primary">Sign in</button>
+                <form method="get" action="/auth/login">
+                    <button type="" class="btn btn-primary">Sign in</button>
+                </form>
             </div>
         </div>
     </div>

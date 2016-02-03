@@ -19,15 +19,15 @@
                     @endif
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" maxlength="255">
+                        <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" maxlength="255" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password" maxlength="10">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Password" maxlength="10" required>
                     </div>
                     <div class="checkbox">
                         <label>
-                          <input type="checkbox" name="remember"> Remember me
+                            <input type="checkbox" name="remember"> Remember me
                         </label>
                     </div>
                   <button type="submit" class="btn btn-primary">Sign in</button>
@@ -43,7 +43,9 @@
                 </div>
                 <br /> <br />
                 <P>Don't yet have an account?</P>
-                <button type="" class="btn btn-success">Register</button>
+                <form method="get" action="/auth/register">
+                    <button type="" class="btn btn-success">Register</button>
+                </form>
             </div>
         </div>
     </div>

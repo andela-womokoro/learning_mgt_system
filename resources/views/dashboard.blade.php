@@ -15,8 +15,9 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="tab-content" style="border: 0px solid #ccc; padding: 10px;">
+
+                    <!-- display user's videos -->
                     <div id="my-videos" class="tab-pane fade in active">
-                        <!-- display user's videos -->
                         <h4>My Videos</h4>
                         <div class="row videos-grid">
                             <?php
@@ -30,11 +31,12 @@
                             <?php } ?>
                         </div>
                     </div>
+
+                    <!-- video upload form -->
                     <div id="upload-video" class="tab-pane fade">
-                         <!-- video upload form -->
                         <h4>Upload a Video</h4>
                         <div class="form-container">
-                            <form method="post" action="/auth/register">
+                            <form method="post" action="/dashboard/video/add">
                                {{ csrf_field() }}
                                 @if (count($errors) > 0)
                                     <div class="alert alert-danger">
@@ -47,11 +49,14 @@
                                 @endif
                                 <div class="form-group">
                                     <label>Video Title</label>
-                                    <input type="text" class="form-control" name="title" value="{{ old('title') }}" maxlength="45">
+                                    <input type="text" class="form-control" name="title" value="{{ old('title') }}" maxlength="45" minlength="4" required>
+                                    @if ($errors->has('title'))
+                                        <span class="help-block">{{ $errors->first('title') }}</span>
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <label>Category</label>
-                                    <select name="category" class="form-control">
+                                    <select name="category" class="form-control" required>
                                         <option>{{ old('category') }}</option>
                                         <option>Programming</option>
                                         <option>Science</option>
@@ -61,11 +66,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>URL</label>
-                                    <input type="text" class="form-control" name="url" value="{{ old('url') }}" placeholder="E.g. https://www.youtube.com/watch?v=tKmkB7OVO_M" maxlength="255">
+                                    <input type="url" class="form-control" name="url" value="{{ old('url') }}" placeholder="E.g. https://www.youtube.com/watch?v=tKmkB7OVO_M" maxlength="255" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea class="form-control" name="description" value="{{ old('description') }}" maxlength="60" rows="3"></textarea>
+                                    <textarea class="form-control" name="description" value="{{ old('description') }}" maxlength="60" rows="3" required></textarea>
                                 </div>
 
                               <button type="submit" class="btn btn-success">Upload</button>

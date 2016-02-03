@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('/test', 'ViewsController@test');
 
 Route::get('/', 'ViewsController@home');
 Route::get('/playback', 'ViewsController@playback');
@@ -23,8 +24,10 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', 'ViewsController@dashboard');
+    Route::post('/dashboard/video/add', 'ViewsController@addVideo');
     Route::get('/profile', 'ViewsController@profile');
 });
 
