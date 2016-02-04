@@ -35,9 +35,9 @@
                                     <h4>{{ $video->category }}</h4>
                                     <p>{{ $video->description }}</p>
                                     <div style="float: right; font-size: 20px;">
-                                        <a href="#" data-toggle="tooltip" title="Edit this video"><i class="fa fa-pencil-square-o"></i></a>
+                                        <a href="/video/edit/{{ $video->id }}" data-toggle="tooltip" title="Edit this video"><i class="fa fa-pencil-square-o"></i></a>
                                         &nbsp;&nbsp;
-                                        <a href="#" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a>
+                                        <a href="/video/delete/{{ $video->id }}" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a>
                                     </div>
                                 </div>
                             </div>

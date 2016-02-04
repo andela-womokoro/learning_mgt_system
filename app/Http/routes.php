@@ -28,6 +28,9 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', ['uses' => 'ViewsController@dashboard', 'as' => 'dashboard']);
     Route::post('/dashboard/videos/add', 'ViewsController@addVideo');
+    Route::get('/video/edit/{id}', 'ViewsController@getEditVideo');
+    Route::post('/video/edit/{id}', 'ViewsController@postEditVideo');
+    Route::get('/video/delete/{id}', 'ViewsController@deleteVideo');
     Route::get('/profile', 'ViewsController@profile');
 });
 

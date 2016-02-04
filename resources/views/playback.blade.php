@@ -4,9 +4,15 @@
 @section('content')
     <div class="container-fluid" style="background-color: #fff; font-family: arial;">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-sm-6">
+                <br />
+                <ol class="breadcrumb">
+                    <li><a href="/dashboard">My Videos</a></li>
+                    <li><a href="">Playback</a></li>
+                    <li class="active">{{ $video->title }}</li>
+                </ol>
                 <h3>{{ $video->title }}</h3>
-                 <?php
+                <?php
                 $youtubeURL = $video->url;
                 $extracted = strrchr($youtubeURL, '=');
                 $youtubeVideoID = str_replace('=', '', $extracted);

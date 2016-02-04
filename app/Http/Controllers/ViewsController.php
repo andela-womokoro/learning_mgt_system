@@ -67,6 +67,30 @@ class ViewsController extends Controller
         return redirect()->route('dashboard')->with('message', 'Successfully added the video.');
     }
 
+    public function getEditVideo($id)
+    {
+        $video = Video::find($id);
+
+        return view('video_edit', ['video' => $video]);
+    }
+
+    public function postEditVideo(Request $request, $id)
+    {
+        $video = Video::find($id);
+        $video->title = $request->input('title');
+        $video->category = $request->input('category');
+        $video->url = $request->input('url');
+        $video->description = $request->input('description');
+        $video->save();
+
+        return view('video_edit', ['video' => $video, 'message' => 'Successfully updated the video.']);
+    }
+
+    public function deleteVideo($id)
+    {
+        return view('video_delete');
+    }
+
     public function profile()
     {
         return view('profile');
