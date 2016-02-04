@@ -22,14 +22,24 @@
                         <div class="row videos-grid">
                            @foreach ($videos as $video)
                             <div class="col-sm-4">
-                                <?php
-                                $youtubeURL = $video->url;
-                                $extracted = strrchr($youtubeURL, '=');
-                                $youtubeVideoID = str_replace('=', '', $extracted);
-                                ?>
-                                <a href="/playback/{{ $video->id }}" class="thumbnail">
-                                    <img src="http://i1.ytimg.com/vi/{{ $youtubeVideoID }}/hqdefault.jpg">
-                                </a>
+                                <div style="border: 1px solid #ccc; margin: 10px; padding:5px; border-radius: 5px; height: 100%; overflow: hidden;">
+                                    <?php
+                                    $youtubeURL = $video->url;
+                                    $extracted = strrchr($youtubeURL, '=');
+                                    $youtubeVideoID = str_replace('=', '', $extracted);
+                                    ?>
+                                    <a href="/playback/{{ $video->id }}" class="thumbnail">
+                                        <img src="http://i1.ytimg.com/vi/{{ $youtubeVideoID }}/hqdefault.jpg">
+                                    </a>
+                                    <h3>{{ $video->title }}</h3>
+                                    <h4>{{ $video->category }}</h4>
+                                    <p>{{ $video->description }}</p>
+                                    <div style="float: right; font-size: 20px;">
+                                        <a href="#" data-toggle="tooltip" title="Edit this video"><i class="fa fa-pencil-square-o"></i></a>
+                                        &nbsp;&nbsp;
+                                        <a href="#" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
                             </div>
                             @endforeach
                         </div>
