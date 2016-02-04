@@ -13,7 +13,7 @@
 Route::get('/test', 'ViewsController@test');
 
 Route::get('/', 'ViewsController@home');
-Route::get('/playback', 'ViewsController@playback');
+Route::get('/playback/{id}', ['uses' => 'ViewsController@playback', 'as' => 'playback']);
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

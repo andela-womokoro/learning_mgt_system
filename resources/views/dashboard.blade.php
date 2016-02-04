@@ -20,15 +20,18 @@
                     <div id="my-videos" class="tab-pane fade in active">
                         <h4>My Videos</h4>
                         <div class="row videos-grid">
-                            <?php
-                            for($i = 0; $i < 4; $i++) {
-                            ?>
+                           @foreach ($videos as $video)
                             <div class="col-sm-4">
-                                <a href="/playback" class="thumbnail">
-                                  <img src="http://i1.ytimg.com/vi/IsZxiIAYc9E/hqdefault.jpg">
+                                <?php
+                                $youtubeURL = $video->url;
+                                $extracted = strrchr($youtubeURL, '=');
+                                $youtubeVideoID = str_replace('=', '', $extracted);
+                                ?>
+                                <a href="/playback/{{ $video->id }}" class="thumbnail">
+                                    <img src="http://i1.ytimg.com/vi/{{ $youtubeVideoID }}/hqdefault.jpg">
                                 </a>
                             </div>
-                            <?php } ?>
+                            @endforeach
                         </div>
                     </div>
 
@@ -85,5 +88,9 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="text-center">
+        {!! $videos->render() !!}
     </div>
 @endsection

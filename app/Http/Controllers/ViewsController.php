@@ -20,9 +20,12 @@ class ViewsController extends Controller
         return view('landing');
     }
 
-    public function playback()
+    public function playback($id)
     {
-        return view('playback');
+        // dd($id);
+        $video = Video::find($id);
+
+        return view('playback', ['video' => $video]);
     }
 
     public function login()
@@ -37,15 +40,13 @@ class ViewsController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $videos = Video::orderBy('created_at', 'desc')->paginate(12);
+
+        return view('dashboard', ['videos' => $videos]);
     }
 
     public function addVideo(Request $request)
     {
-       $youtubeURL = $request->input('url');
-       $extracted = strrchr($youtubeURL, '=');
-       $youtubeVideoID = str_replace('=', '', $extracted);
-
         $this->validate($request, [
            'title' => 'required|unique:videos',
             'category' => 'required',
