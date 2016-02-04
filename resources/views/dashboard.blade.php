@@ -25,7 +25,7 @@
                             ?>
                             <div class="col-sm-4">
                                 <a href="/playback" class="thumbnail">
-                                  <img src="http://i1.ytimg.com/vi/IsZxiIAYc9E/hqdefault.jpg" alt="...">
+                                  <img src="http://i1.ytimg.com/vi/IsZxiIAYc9E/hqdefault.jpg">
                                 </a>
                             </div>
                             <?php } ?>
@@ -36,7 +36,7 @@
                     <div id="upload-video" class="tab-pane fade">
                         <h4>Upload a Video</h4>
                         <div class="form-container">
-                            <form method="post" action="/dashboard/video/add">
+                            <form method="post" action="/dashboard/videos/add">
                                {{ csrf_field() }}
                                 @if (count($errors) > 0)
                                     <div class="alert alert-danger">
@@ -47,9 +47,14 @@
                                         </ul>
                                     </div>
                                 @endif
+                                @if(session('message'))
+                                    <div class="alert alert-info" role="alert">
+                                        {{ session('message') }}
+                                    </div>
+                                @endif
                                 <div class="form-group">
                                     <label>Video Title</label>
-                                    <input type="text" class="form-control" name="title" value="{{ old('title') }}" maxlength="45" minlength="4" required>
+                                    <input type="text" class="form-control" name="title" value="{{ old('title') }}" maxlength="45" minlength="3" required>
                                     @if ($errors->has('title'))
                                         <span class="help-block">{{ $errors->first('title') }}</span>
                                     @endif
@@ -70,7 +75,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea class="form-control" name="description" value="{{ old('description') }}" maxlength="60" rows="3" required></textarea>
+                                    <textarea class="form-control" name="description" maxlength="255" minlength="10" rows="3" required>{{ old('description') }}</textarea>
                                 </div>
 
                               <button type="submit" class="btn btn-success">Upload</button>
