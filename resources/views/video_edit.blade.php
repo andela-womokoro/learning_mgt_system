@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('shared.master')
 @section('title', 'Dashboard')
 
 @section('content')
@@ -16,12 +16,7 @@
         </div>
         <div class="row">
             <div class="col-sm-4">
-                <?php
-                $youtubeURL = $video->url;
-                $extracted = strrchr($youtubeURL, '=');
-                $youtubeVideoID = str_replace('=', '', $extracted);
-                ?>
-                <img src="http://i1.ytimg.com/vi/{{ $youtubeVideoID }}/hqdefault.jpg">
+                <img src="http://i1.ytimg.com/vi/{{ VideoIDExtractor::getVideoID($video->url) }}/hqdefault.jpg">
             </div>
             <div class="col-sm-8">
                 <div class="form-container">

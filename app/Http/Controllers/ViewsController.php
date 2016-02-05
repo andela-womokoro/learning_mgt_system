@@ -83,7 +83,7 @@ class ViewsController extends Controller
         $video->description = $request->input('description');
         $video->save();
 
-        return view('video_edit', ['video' => $video, 'message' => 'Successfully updated the video.']);
+        return view('video_edit', ['video' => $video, 'message' => 'You changes have been saved.']);
     }
 
     public function deleteVideo($id)

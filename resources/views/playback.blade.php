@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('shared.master')
 @section('title', 'Dashboard')
 
 @section('content')
@@ -12,13 +12,8 @@
                     <li class="active">{{ $video->title }}</li>
                 </ol>
                 <h3>{{ $video->title }}</h3>
-                <?php
-                $youtubeURL = $video->url;
-                $extracted = strrchr($youtubeURL, '=');
-                $youtubeVideoID = str_replace('=', '', $extracted);
-                ?>
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/{{ $youtubeVideoID }}" allowfullscreen></iframe>
+                    <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/{{ VideoIDExtractor::getVideoID($video->url) }}" allowfullscreen></iframe>
                 </div>
             </div>
         </div>

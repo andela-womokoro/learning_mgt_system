@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('shared.master')
 @section('title', 'Dashboard')
 
 @section('content')
@@ -23,13 +23,8 @@
                            @foreach ($videos as $video)
                             <div class="col-sm-4">
                                 <div style="border: 1px solid #ccc; margin: 10px; padding:5px; border-radius: 5px; height: 100%; overflow: hidden;">
-                                    <?php
-                                    $youtubeURL = $video->url;
-                                    $extracted = strrchr($youtubeURL, '=');
-                                    $youtubeVideoID = str_replace('=', '', $extracted);
-                                    ?>
                                     <a href="/playback/{{ $video->id }}" class="thumbnail">
-                                        <img src="http://i1.ytimg.com/vi/{{ $youtubeVideoID }}/hqdefault.jpg">
+                                        <img src="http://i1.ytimg.com/vi/{{ VideoIDExtractor::getVideoID($video->url) }}/hqdefault.jpg">
                                     </a>
                                     <h3>{{ $video->title }}</h3>
                                     <h4>{{ $video->category }}</h4>
