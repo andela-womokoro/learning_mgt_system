@@ -39,10 +39,10 @@
                                         &nbsp;&nbsp;
                                         <!-- <a href="/video/delete/{{ $video->id }}" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a> -->
 
-                                        <a href="#openModal" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a>
+                                        <a href="#{{ $video->id }}" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a>
 
-                                        <!-- Delete modal -->
-                                        <div id="openModal" class="modalDialog">
+                                        <!-- Deletion modal -->
+                                        <div id="{{ $video->id }}" class="modalDialog">
                                             <div>
                                                 <a href="#close" title="Close" class="close">X</a>
                                                 <h3>Warning!</h3>
