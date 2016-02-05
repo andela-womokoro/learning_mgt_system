@@ -7,7 +7,11 @@
             <div class="col-sm-6">
                 <br />
                 <ol class="breadcrumb">
-                    <li><a href="/dashboard">My Videos</a></li>
+                    @if (Auth::check())
+                        <li><a href="/dashboard">My Videos</a></li>
+                    @else
+                        <li><a href="/">Home</a></li>
+                    @endif
                     <li><a href="">Playback</a></li>
                     <li class="active">{{ $video->title }}</li>
                 </ol>

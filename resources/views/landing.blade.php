@@ -41,15 +41,9 @@
 <!-- Videos grid -->
 <div class="container-fluid">
     <div class="row videos-grid">
-        <?php
-        for($i = 0; $i < 6; $i++) {
-        ?>
-        <div class="col-sm-4">
-            <a href="#" class="thumbnail">
-              <img src="/images/video.png" alt="...">
-            </a>
+        <div class="col-sm-12">
+            @include('shared.videos_grid')
         </div>
-        <?php } ?>
     </div>
 </div>
 

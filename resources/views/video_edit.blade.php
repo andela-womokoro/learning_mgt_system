@@ -54,7 +54,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>URL</label>
+                            <label>Youtube URL</label>
                             <input type="url" class="form-control" name="url" value="{{ $video->url }}" placeholder="E.g. https://www.youtube.com/watch?v=tKmkB7OVO_M" maxlength="255" required>
                         </div>
                         <div class="form-group">

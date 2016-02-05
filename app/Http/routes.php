@@ -10,7 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/test', 'ViewsController@test');
 
 Route::get('/', 'ViewsController@home');
 Route::get('/playback/{id}', ['uses' => 'ViewsController@playback', 'as' => 'playback']);

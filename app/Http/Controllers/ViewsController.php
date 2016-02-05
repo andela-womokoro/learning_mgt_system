@@ -10,14 +10,11 @@ use App\Http\Controllers\Controller;
 
 class ViewsController extends Controller
 {
-    public function test()
-    {
-        echo 'Testing...';
-    }
-
     public function home()
     {
-        return view('landing');
+        $videos = Video::orderBy('created_at', 'desc')->paginate(12);
+
+        return view('landing', ['videos' => $videos]);
     }
 
     public function playback($id)
