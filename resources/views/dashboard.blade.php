@@ -18,6 +18,11 @@
 
                     <!-- display user's videos -->
                     <div id="my-videos" class="tab-pane fade in active">
+                        @if(isset($message))
+                            <div class="alert alert-info" role="alert">
+                                {{ $message }}
+                            </div>
+                        @endif
                         <h4>My Videos</h4>
                         <div class="row videos-grid">
                            @foreach ($videos as $video)
@@ -32,7 +37,26 @@
                                     <div style="float: right; font-size: 20px;">
                                         <a href="/video/edit/{{ $video->id }}" data-toggle="tooltip" title="Edit this video"><i class="fa fa-pencil-square-o"></i></a>
                                         &nbsp;&nbsp;
-                                        <a href="/video/delete/{{ $video->id }}" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a>
+                                        <!-- <a href="/video/delete/{{ $video->id }}" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a> -->
+
+                                        <a href="#openModal" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a>
+
+                                        <!-- Delete modal -->
+                                        <div id="openModal" class="modalDialog">
+                                            <div>
+                                                <a href="#close" title="Close" class="close">X</a>
+                                                <h3>Warning!</h3>
+                                                <p>You are about to delete the video <b>"{{ $video->title }}"</b>. Are you sure you really want to delete the video?</p>
+                                                <br />
+                                                <form method="post" action="/video/delete/{{ $video->id }}">
+                                                    <input type="hidden" name="id" value="{{ $video->id }}" />
+                                                    {{ csrf_field() }}
+                                                    <button type="button" class="btn btn-success" onclick="location.href='#close';">No</button>
+                                                    &nbsp;&nbsp;
+                                                    <button type="submit" class="btn btn-danger">Yes, delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

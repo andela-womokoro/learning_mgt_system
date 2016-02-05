@@ -30,7 +30,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/dashboard/videos/add', 'ViewsController@addVideo');
     Route::get('/video/edit/{id}', 'ViewsController@getEditVideo');
     Route::post('/video/edit/{id}', 'ViewsController@postEditVideo');
-    Route::get('/video/delete/{id}', 'ViewsController@deleteVideo');
+    // Route::get('/video/delete/{id}', 'ViewsController@getDeleteVideo');
+    Route::post('/video/delete/{id}', 'ViewsController@deleteVideo');
     Route::get('/profile', 'ViewsController@profile');
 });
 

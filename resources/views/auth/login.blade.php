@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('shared.master')
 @section('title', 'Sign in')
 
 @section('content')
@@ -33,7 +33,7 @@
                   <button type="submit" class="btn btn-primary">Sign in</button>
                 </form>
                 <br />
-                <div class="form-container">
+                <div>
                     <p>or sign in with</p>
                     <p>
                         <a href=""><span class="github"><i class="fa fa-github-square"></i></span></a>

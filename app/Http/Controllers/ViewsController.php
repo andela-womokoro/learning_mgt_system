@@ -86,9 +86,15 @@ class ViewsController extends Controller
         return view('video_edit', ['video' => $video, 'message' => 'You changes have been saved.']);
     }
 
-    public function deleteVideo($id)
+    public function deleteVideo(Request $request)
     {
-        return view('video_delete');
+        $video = Video::find($request->input('id'));
+        $videoTitle = $video->title;
+        $video->delete();
+
+        $videos = Video::orderBy('created_at', 'desc')->paginate(12);
+
+        return view('dashboard', ['videos' => $videos, 'message' => 'The video "'.$videoTitle.'" was deleted.']);
     }
 
     public function profile()
