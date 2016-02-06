@@ -30,16 +30,12 @@
                             <input type="checkbox" name="remember"> Remember me
                         </label>
                     </div>
-                  <button type="submit" class="btn btn-primary">Sign in</button>
+                  <button type="submit" class="btn btn-primary">Sign me in</button>
                 </form>
                 <br />
                 <div>
                     <p>or sign in with</p>
-                    <p>
-                        <a href="/auth/github"><span class="github"><i class="fa fa-github-square"></i></span></a>
-                        <a href="/auth/twitter"><span class="twitter"><i class="fa fa-twitter-square"></i></span></a>
-                        <a href="/auth/facebook"><span class="facebook"><i class="fa fa-facebook-square"></i></span></a>
-                    </p>
+                    <p>@include('shared.social_auth_links')</p>
                 </div>
                 <br /> <br />
                 <P>Don't yet have an account?</P>

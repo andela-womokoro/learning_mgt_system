@@ -47,9 +47,13 @@
                           <input type="checkbox" name="agree" required> I agree to the terms and conditions
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-success">Create account</button>
+                    <button type="submit" class="btn btn-success">Create my account</button>
                 </form>
                 <br />
+                <div>
+                    <p>or sign up with</p>
+                    <p>@include('shared.social_auth_links')</p>
+                </div>
                 <br /> <br />
                 <P>Already have an account?</P>
                 <form method="get" action="/auth/login">
