@@ -23,6 +23,9 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+// Social media authentication routes...
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', ['uses' => 'ViewsController@dashboard', 'as' => 'dashboard']);
