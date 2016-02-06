@@ -106,6 +106,8 @@ class AuthController extends Controller
             return redirect('auth/'.$provider);
         }
 
+        // dd($user);
+
         $authUser = $this->findOrCreateUser($user, $provider);
 
         Auth::loginUsingId($authUser->id, true);
@@ -121,7 +123,7 @@ class AuthController extends Controller
      */
     private function findOrCreateUser($theUser, $provider)
     {
-        $authUser = User::where('uid', $theUser->id)->first();
+        $authUser = User::where('email', $theUser->email)->first();
 
         if ($authUser) {
             return $authUser;
@@ -135,14 +137,7 @@ class AuthController extends Controller
                 'uid' => $theUser->id,
                 'avatar_url' => $theUser->avatar,
             ]);
-            // $err = new OAuthNameException();
-            // $err->setUser($user);
-            // throw $err;
         }
-
-        // if (User::where('email', $theUser->email)->first()) {
-        //     throw new OAuthEmailException();
-        // }
 
         return User::create([
             'username' => $theUser->nickname,

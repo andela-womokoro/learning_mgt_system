@@ -36,9 +36,9 @@
                 <div>
                     <p>or sign in with</p>
                     <p>
-                        <a href=""><span class="github"><i class="fa fa-github-square"></i></span></a>
-                        <a href=""><span class="twitter"><i class="fa fa-twitter-square"></i></span></a>
-                        <a href=""><span class="facebook"><i class="fa fa-facebook-square"></i></span></a>
+                        <a href="/auth/github"><span class="github"><i class="fa fa-github-square"></i></span></a>
+                        <a href="/auth/twitter"><span class="twitter"><i class="fa fa-twitter-square"></i></span></a>
+                        <a href="/auth/facebook"><span class="facebook"><i class="fa fa-facebook-square"></i></span></a>
                     </p>
                 </div>
                 <br /> <br />
