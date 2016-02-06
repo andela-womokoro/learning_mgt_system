@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Auth;
 use App\User;
 use Validator;
+use Socialite;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -80,5 +81,75 @@ class AuthController extends Controller
     {
         Auth::logout();
         return view('/auth/login');
+    }
+
+    /**
+     * Redirect the user to the provider's authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    /**
+     * Obtain the user information from the provider.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback($provider)
+    {
+        try {
+            $user = Socialite::driver($provider)->user();
+        } catch (Exception $e) {
+            return redirect('auth/'.$provider);
+        }
+
+        $authUser = $this->findOrCreateUser($user, $provider);
+
+        Auth::loginUsingId($authUser->id, true);
+
+        return redirect($this->redirectTo);
+    }
+
+    /**
+     * Return user if exists; create and return if doesn't.
+     *
+     * @param $theUser
+     * @return User
+     */
+    private function findOrCreateUser($theUser, $provider)
+    {
+        $authUser = User::where('uid', $theUser->id)->first();
+
+        if ($authUser) {
+            return $authUser;
+        }
+
+        if (User::where('username', $theUser->nickname)->first()) {
+            $user = factory(User::class)->make([
+                'username' => $theUser->nickname,
+                'email' => $theUser->email,
+                'provider' => $provider,
+                'uid' => $theUser->id,
+                'avatar_url' => $theUser->avatar,
+            ]);
+            // $err = new OAuthNameException();
+            // $err->setUser($user);
+            // throw $err;
+        }
+
+        // if (User::where('email', $theUser->email)->first()) {
+        //     throw new OAuthEmailException();
+        // }
+
+        return User::create([
+            'username' => $theUser->nickname,
+            'email' => $theUser->email,
+            'provider' => $provider,
+            'uid' => $theUser->id,
+            'avatar_url' => $theUser->avatar,
+        ]);
     }
 }
