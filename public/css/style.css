@@ -43,7 +43,7 @@ body
 
 .header
 {
-    background-color: #fff;
+    background-color: #363f45;
     border-radius: 0px;
     border-bottom: 1px inset #ccc;
 }
@@ -58,12 +58,22 @@ body
     font-size: 12px;
 }
 
+li.dropdown.open {
+    background-color: pink;
+}
+
 li.dropdown:hover
 {
-    background-color: #1abc9c;
+    background-color: #425164;
     color: #fff;
 }
 
+.dropdown-menu>li>a:hover
+{
+    color: #fa8561;
+}
+
+/*
 i.dropdown:active
 {
     background-color: yellow;
@@ -88,6 +98,7 @@ a.dropdown-toggle:hover{
     color: #1abc9c;
     font-size: 1.5em;
 }
+*/
 
 .videos-grid {
     border: 0px solid gray;

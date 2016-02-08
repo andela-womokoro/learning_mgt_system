@@ -61,7 +61,9 @@ class ViewsController extends Controller
             'url' => $request->input('url')
         ]);
 
-        return redirect()->route('dashboard')->with('message', 'Successfully added the video.');
+        $videos = Video::where('user_id', Auth::user()->id)->paginate(12);
+
+        return view('dashboard', ['videos' => $videos, 'upload_message' => 'The video was successfully added.', 'action' => 'video upload']);
     }
 
     public function getEditVideo($id)

@@ -31,6 +31,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">All Videos</a></li>
+                            <li role="separator" class="divider"></li>
                             <li><a href="#">Science Videos</a></li>
                             <li><a href="#">Technology Videos</a></li>
                             <li><a href="#">Programming Videos</a></li>
@@ -38,14 +39,14 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="navbar-form navbar-left" role="search">
+                <!-- <form class="navbar-form navbar-left" role="search">
                     <div class="input-group add-on">
                         <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit" style="color: #1abc9c;"><i class="glyphicon glyphicon-search"></i></button>
                         </div>
                     </div>
-                </form>
+                </form> -->
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i><span class="caret"></span></a>

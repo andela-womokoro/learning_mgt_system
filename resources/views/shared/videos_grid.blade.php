@@ -15,7 +15,7 @@
     <div class="row videos-grid">
        @foreach ($videos as $video)
             <div class="col-sm-4">
-                <div style="border: 1px solid #ccc; position:relative; margin: 10px; padding:5px; border-radius: 5px; overflow: hidden;">
+                <div style="border: 1px solid #ccc; position:relative; margin: 10px; padding:5px; border-radius: 5px; height: 500px; overflow: hidden;">
                     <a href="/playback/{{ $video->id }}" class="thumbnail">
                         <img src="http://i1.ytimg.com/vi/{{ VideoIDExtractor::getVideoID($video->url) }}/hqdefault.jpg">
                     </a>
@@ -23,7 +23,7 @@
                     <h4>{{ $video->category }}</h4>
                     <p>{{ str_limit($video->description, $limit = 200, $end = '...') }}</p>
                     @if (Auth::check() && $currentRoute == 'dashboard')
-                        <div style="border: 0px solid gray; width:100px; position: absolute; bottom:0px; right:0px; float: right; font-size: 20px; text-align: right; margin: 3px;">
+                        <div style="border: 0px solid gray; width:100%; position: absolute; bottom:0px; right:0px; float: right; font-size: 20px; text-align: right; margin: 3px;">
                             <a href="/video/edit/{{ $video->id }}" data-toggle="tooltip" title="Edit this video"><i class="fa fa-pencil-square-o"></i></a>
                             &nbsp;&nbsp;
                             <a href="#{{ $video->id }}" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a>
