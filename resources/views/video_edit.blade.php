@@ -11,7 +11,7 @@
                     <li><a href="">Edit Video</a></li>
                     <li class="active">{{ $video->title }}</li>
                 </ol>
-                <h4>Edit Video</h4>
+                <h3>Edit Video</h3>
             </div>
         </div>
         <div class="row">

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Clouder;
+use App\User;
 use App\Video;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -98,6 +100,27 @@ class ViewsController extends Controller
 
     public function profile()
     {
-        return view('profile');
+        $user = User::find(Auth::user()->id);
+
+        return view('profile', ['user' => $user]);
+    }
+
+    public function updateAvatar(Request $request)
+    {
+        $image = Input::file('avatar_url');
+
+        User::find(Auth::user()->id)->updateAvatar($this->getImageUrl($image));
+
+        $user = User::find(Auth::user()->id);
+
+        // return Redirect::back()->with('status', 'Avatar updated successfully.');
+        return view('profile', ['user' => $user, 'message' => 'You have successfully updated your avatar.']);
+    }
+
+    private function getImageUrl($image)
+    {
+        Cloudder::upload($image);
+
+        return Cloudder::getResult()['url'];
     }
 }

@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function () {
     // Route::get('/video/delete/{id}', 'ViewsController@getDeleteVideo');
     Route::post('/video/delete/{id}', 'ViewsController@deleteVideo');
     Route::get('/profile', 'ViewsController@profile');
+    Route::post('/profile/avatar/update', 'ViewsController@updateAvatar');
 });
 
 Route::controllers([

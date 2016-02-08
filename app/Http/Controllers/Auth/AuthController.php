@@ -139,6 +139,8 @@ class AuthController extends Controller
             ]);
         }
 
+        //dd($theUser->avatar);
+
         return User::create([
             'username' => $theUser->nickname,
             'email' => $theUser->email,
