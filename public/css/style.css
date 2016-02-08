@@ -58,20 +58,6 @@ body
     font-size: 12px;
 }
 
-li.dropdown.open {
-    background-color: pink;
-}
-
-li.dropdown:hover
-{
-    background-color: #425164;
-    color: #fff;
-}
-
-.dropdown-menu>li>a:hover
-{
-    color: #fa8561;
-}
 
 /*
 i.dropdown:active
