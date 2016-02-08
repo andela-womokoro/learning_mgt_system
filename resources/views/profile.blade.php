@@ -22,6 +22,7 @@
                 @endif
                 <br />
                 <form method="post" action="/profile/avatar/update" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <input type="file" name="avatar_file" />
                     <br />
                     <button type="submit" class="btn btn-success">Update Avatar</button>
