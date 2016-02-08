@@ -106,8 +106,6 @@ class AuthController extends Controller
             return redirect('auth/'.$provider);
         }
 
-        // dd($user);
-
         $authUser = $this->findOrCreateUser($user, $provider);
 
         Auth::loginUsingId($authUser->id, true);
@@ -138,8 +136,6 @@ class AuthController extends Controller
                 'avatar_url' => $theUser->avatar,
             ]);
         }
-
-        //dd($theUser->avatar);
 
         return User::create([
             'username' => $theUser->nickname,
