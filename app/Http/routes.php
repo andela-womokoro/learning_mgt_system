@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'ViewsController@home');
-Route::get('/{category}', 'ViewsController@videoCategories');
+Route::get('/videos/{category}', 'ViewsController@videoCategories');
 Route::get('/playback/{id}', ['uses' => 'ViewsController@playback', 'as' => 'playback']);
 
 // Authentication routes...
