@@ -29,16 +29,31 @@ body
     color: #55acee;
 }
 
+.twitter:hover
+{
+    color: #66bdff;
+}
+
 .github
 {
     padding: 2px;
     color: #444;
 }
 
+.github:hover
+{
+    color: #777;
+}
+
 .facebook
 {
     padding: 2px;
     color: #3e5b99;
+}
+
+.facebook:hover
+{
+    color: #5f7dbb;
 }
 
 .header
@@ -56,6 +71,31 @@ body
     margin-bottom: 0px;
     padding :10px;
     font-size: 12px;
+}
+
+.video-thumbnail {
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 3px solid #fc6f43;
+    border-left: 1px solid #ddd;
+    position:relative;
+    background-color: #fff;
+    margin: 10px;
+    padding:5px;
+    border-radius: 4px;
+    height: 500px;
+    overflow: hidden;
+}
+
+li.dropdown:hover
+{
+    background-color: #585f67;
+    color: #fff;
+}
+
+.dropdown-menu>li>a:hover
+{
+    color: #fa8561;
 }
 
 

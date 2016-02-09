@@ -15,7 +15,7 @@
     <div class="row videos-grid">
        @foreach ($videos as $video)
             <div class="col-sm-4">
-                <div style="border: 1px solid #ccc; position:relative; margin: 10px; padding:5px; border-radius: 5px; height: 500px; overflow: hidden;">
+                <div class="video-thumbnail">
                     <a href="/playback/{{ $video->id }}" class="thumbnail">
                         <img src="http://i1.ytimg.com/vi/{{ VideoIDExtractor::getVideoID($video->url) }}/hqdefault.jpg">
                     </a>

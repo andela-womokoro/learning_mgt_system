@@ -73,8 +73,8 @@
     <nav class="navbar navbar-default footer">
         <div class="container">
            <div class="row">
-                <div class="col-md-12">
-                    Copyright 2016
+                <div class="col-md-12" style="padding-top: 25px; text-align: center;">
+                    Copyright &copy; 2016. All rights reserved.
                 </div>
             </div>
         </div>
