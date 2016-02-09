@@ -106,6 +106,11 @@ class AuthController extends Controller
             return redirect('auth/'.$provider);
         }
 
+        // Facebook API dosen't return a nickname. Compensate for this here
+        if($provider == 'facebook') {
+            $user->nickname = $user->user['first_name'];
+        }
+
         $authUser = $this->findOrCreateUser($user, $provider);
 
         Auth::loginUsingId($authUser->id, true);
