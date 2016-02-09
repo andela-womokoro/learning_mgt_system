@@ -50,7 +50,13 @@
                 </form> -->
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i><span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user"></i>
+                            @if (Auth::check())
+                                {{ Auth::user()->username }}
+                            @endif
+                            <span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
                             @if (Auth::check())
                                 <li><a href="/dashboard">Dashboard</a></li>
