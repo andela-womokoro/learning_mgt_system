@@ -21,7 +21,7 @@
                     <img class="img-responsive" src="/images/avatar.png" width="200" height="200" />
                 @endif
                 <br />
-                <form method="post" action="/profile/avatar/update" enctype="multipart/form-data">
+                <form method="post" action="/profile/update/avatar" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="file" name="avatar_file" />
                     <br />
@@ -31,7 +31,7 @@
             </div>
             <div class="col-sm-9">
                 <div class="form-container">
-                    <form method="post" action="">
+                    <form method="post" action="/profile/update">
                        {{ csrf_field() }}
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -48,7 +48,15 @@
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" name="url" value="{{ $user->email }}" placeholder="E.g. https://www.youtube.com/watch?v=tKmkB7OVO_M" maxlength="255" required>
+                            <input type="email" class="form-control" name="email" value="{{ $user->email }}"  maxlength="255" required>
+                        </div>
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" name="first_name" value="{{ $user->first_name }}"  maxlength="45" required>
+                        </div>
+                         <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" name="last_name" value="{{ $user->last_name }}"  maxlength="45" required>
                         </div>
                         <button type="submit" class="btn btn-success">Save Changes</button>
                     </form>

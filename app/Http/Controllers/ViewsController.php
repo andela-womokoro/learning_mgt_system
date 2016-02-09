@@ -106,6 +106,18 @@ class ViewsController extends Controller
         return view('profile', ['user' => $user]);
     }
 
+    public function updateProfile(Request $request)
+    {
+        $user = User::find(Auth::user()->id);
+        $user->username = $request->input('username');
+        $user->email = $request->input('email');
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
+        $user->save();
+
+        return view('profile', ['user' => $user, 'message' => 'You have successfully updated your profile.']);
+    }
+
     public function updateAvatar()
     {
         $image = Input::file('avatar_file');
