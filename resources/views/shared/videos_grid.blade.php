@@ -51,5 +51,15 @@
                 </div>
             </div>
         @endforeach
+
+        @if ($videos->count() == 0)
+            <div class="alert alert-info" role="alert">
+                @if (Auth::check() && $currentRoute == 'dashboard')
+                    {{ 'You currently have no videos. Click the "Upload Video" tab to upload a video from Youtube.' }}
+                @else
+                    {{ 'There are currently no videos in the selected category.' }}
+                @endif
+            </div>
+        @endif
     </div>
 </div>

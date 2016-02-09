@@ -30,13 +30,13 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">All Videos</a></li>
+                            <li><a href="/">All Videos</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Computing Videos</a></li>
-                            <li><a href="#">Science Videos</a></li>
-                            <li><a href="#">Technology Videos</a></li>
-                            <li><a href="#">Engineering Videos</a></li>
-                            <li><a href="#">Arts and Humanities Videos</a></li>
+                            <li><a href="/Computing">Computing Videos</a></li>
+                            <li><a href="/Science">Science Videos</a></li>
+                            <li><a href="/Technology">Technology Videos</a></li>
+                            <li><a href="/Engineering">Engineering Videos</a></li>
+                            <li><a href="/Arts_and_Humanities">Arts and Humanities Videos</a></li>
                         </ul>
                     </li>
                 </ul>

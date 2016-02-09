@@ -20,9 +20,17 @@ class ViewsController extends Controller
         return view('landing', ['videos' => $videos]);
     }
 
+    public function videoCategories($category)
+    {
+        $category = str_replace('_', ' ', $category);
+
+        $videos = Video::where('category', '=', $category)->paginate(12);
+
+        return view('landing', ['videos' => $videos]);
+    }
+
     public function playback($id)
     {
-        // dd($id);
         $video = Video::find($id);
 
         return view('playback', ['video' => $video]);
