@@ -29,7 +29,12 @@ class VideosController extends Controller
         return view('playback', ['video' => $video]);
     }
 
-    public function addVideo(Request $request)
+    public function getAddVideo()
+    {
+        return view('video_add');
+    }
+
+    public function postAddVideo(Request $request)
     {
         $this->validate($request, [
            'title' => 'required|unique:videos',
@@ -48,9 +53,9 @@ class VideosController extends Controller
             'url' => $request->input('url')
         ]);
 
-        $videos = Video::where('user_id', Auth::user()->id)->paginate(12);
+        // $videos = Video::where('user_id', Auth::user()->id)->paginate(12);
 
-        return view('dashboard', ['videos' => $videos, 'upload_message' => 'The video was successfully added.', 'action' => 'video upload']);
+        return view('video_add', ['upload_message' => 'The video has been successfully uploaded.']);
     }
 
     public function getEditVideo($id)

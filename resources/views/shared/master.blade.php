@@ -60,8 +60,9 @@
                         <ul class="dropdown-menu">
                             @if (Auth::check())
                                 <li><a href="/dashboard">Dashboard</a></li>
+                                <li><a href="/videos/add/new">Upload Video</a></li>
                                 <li><a href="/profile">My Profile</a></li>
-                                 <li role="separator" class="divider"></li>
+                                <li role="separator" class="divider"></li>
                                 <li><a href="/auth/logout">Log out</a></li>
                             @else
                                 <li><a href="/auth/login">Sign in</a></li>

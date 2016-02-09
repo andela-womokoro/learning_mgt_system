@@ -30,7 +30,8 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', ['uses' => 'ViewsController@dashboard', 'as' => 'dashboard']);
-    Route::post('/dashboard/videos/add', 'VideosController@addVideo');
+    Route::get('/videos/add/new', 'VideosController@getAddVideo');
+    Route::post('/videos/add/new', 'VideosController@postAddVideo');
     Route::get('/video/edit/{id}', 'VideosController@getEditVideo');
     Route::post('/video/edit/{id}', 'VideosController@postEditVideo');
     Route::post('/video/delete/{id}', 'VideosController@deleteVideo');

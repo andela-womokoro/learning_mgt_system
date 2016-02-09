@@ -3,7 +3,6 @@
 ?>
 
 <!-- display videos -->
-<div id="my-videos" class="tab-pane fade in active">
     @if (Auth::check() && $currentRoute == 'dashboard')
         @if (isset($message))
             <div class="alert alert-info" role="alert">
@@ -22,7 +21,9 @@
                 @endif
             </div>
         @else
-            <h2 style="text-align: center; color: #fc6f43; font-family: Helvetica,sans-serif;">Join a growing global community of online publishers and learners</h2>
+            @if ($currentRoute != 'dashboard')
+                <h2 style="text-align: center; color: #fc6f43; font-family: Helvetica,sans-serif;">Join a growing global community of online publishers and learners</h2>
+            @endif
         @endif
 
        @foreach ($videos as $video)
@@ -64,4 +65,3 @@
             </div>
         @endforeach
     </div>
-</div>
