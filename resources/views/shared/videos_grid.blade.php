@@ -13,6 +13,18 @@
         <h4>My Videos</h4>
     @endif
     <div class="row videos-grid">
+        @if ($videos->count() == 0)
+            <div class="alert alert-info" role="alert">
+                @if (Auth::check() && $currentRoute == 'dashboard')
+                    {{ 'You currently have no videos. Click the "Upload Video" tab to upload a video from Youtube.' }}
+                @else
+                    {{ 'There are currently no videos in the selected category.' }}
+                @endif
+            </div>
+        @else
+            <h2 style="text-align: center; color: #fc6f43; font-family: Helvetica,sans-serif;">Join a growing global community of online publishers and learners</h2>
+        @endif
+
        @foreach ($videos as $video)
             <div class="col-sm-4">
                 <div class="video-thumbnail">
@@ -51,15 +63,5 @@
                 </div>
             </div>
         @endforeach
-
-        @if ($videos->count() == 0)
-            <div class="alert alert-info" role="alert">
-                @if (Auth::check() && $currentRoute == 'dashboard')
-                    {{ 'You currently have no videos. Click the "Upload Video" tab to upload a video from Youtube.' }}
-                @else
-                    {{ 'There are currently no videos in the selected category.' }}
-                @endif
-            </div>
-        @endif
     </div>
 </div>
