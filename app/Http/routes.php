@@ -12,8 +12,8 @@
 */
 
 Route::get('/', 'ViewsController@home');
-Route::get('/videos/{category}', 'ViewsController@videoCategories');
-Route::get('/playback/{id}', ['uses' => 'ViewsController@playback', 'as' => 'playback']);
+Route::get('/videos/{category}', 'VideosController@videoCategories');
+Route::get('/playback/{id}', ['uses' => 'VideosController@playback', 'as' => 'playback']);
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -30,13 +30,13 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', ['uses' => 'ViewsController@dashboard', 'as' => 'dashboard']);
-    Route::post('/dashboard/videos/add', 'ViewsController@addVideo');
-    Route::get('/video/edit/{id}', 'ViewsController@getEditVideo');
-    Route::post('/video/edit/{id}', 'ViewsController@postEditVideo');
-    Route::post('/video/delete/{id}', 'ViewsController@deleteVideo');
-    Route::get('/profile', 'ViewsController@profile');
-    Route::post('/profile/update', 'ViewsController@updateProfile');
-    Route::post('/profile/update/avatar', 'ViewsController@updateAvatar');
+    Route::post('/dashboard/videos/add', 'VideosController@addVideo');
+    Route::get('/video/edit/{id}', 'VideosController@getEditVideo');
+    Route::post('/video/edit/{id}', 'VideosController@postEditVideo');
+    Route::post('/video/delete/{id}', 'VideosController@deleteVideo');
+    Route::get('/profile', 'UsersController@profile');
+    Route::post('/profile/update', 'UsersController@updateProfile');
+    Route::post('/profile/update/avatar', 'UsersController@updateAvatar');
 });
 
 Route::controllers([
