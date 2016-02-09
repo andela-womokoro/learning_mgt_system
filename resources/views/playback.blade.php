@@ -24,6 +24,7 @@
                     <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/{{ VideoIDExtractor::getVideoID($video->url) }}" allowfullscreen></iframe>
                 </div>
                 <br />
+                <p style="font-size:11px; color:#aaa;">Uploaded on: {{ date('F d, Y', strtotime($video->created_at)) }}</p>
                 <p>{{ $video->description }}</p>
             </div>
         </div>

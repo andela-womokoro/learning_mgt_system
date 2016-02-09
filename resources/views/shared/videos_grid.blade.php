@@ -20,7 +20,8 @@
                     <img src="http://i1.ytimg.com/vi/{{ VideoIDExtractor::getVideoID($video->url) }}/hqdefault.jpg">
                     </a>
                     <h3>{{ str_limit($video->title, $limit = 40, $end = '...') }}</h3>
-                    <h4>{{ $video->category }}</h4>
+                    <h4 style="color: #aaa;">{{ $video->category }}</h4>
+                    <p style="font-size:11px; color:#aaa;">Uploaded on: {{ date('F d, Y', strtotime($video->created_at)) }}</p>
                     <p>{{ str_limit($video->description, $limit = 200, $end = '...') }}</p>
                     @if (Auth::check() && $currentRoute == 'dashboard')
                         <div style="border: 0px solid gray; width:100%; position: absolute; bottom:0px; right:0px; float: right; font-size: 20px; text-align: right; margin: 3px;">
