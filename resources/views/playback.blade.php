@@ -2,7 +2,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div class="container-fluid" style="font-family: arial;">
+    <div class="container-fluid">
         <div class="row">
              <div class="col-sm-12">
                 <br />
@@ -23,6 +23,8 @@
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/{{ VideoIDExtractor::getVideoID($video->url) }}" allowfullscreen></iframe>
                 </div>
+                <br />
+                <p>{{ $video->description }}</p>
             </div>
         </div>
     </div>
