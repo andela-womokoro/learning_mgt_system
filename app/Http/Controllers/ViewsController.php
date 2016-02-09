@@ -20,16 +20,6 @@ class ViewsController extends Controller
         return view('landing', ['videos' => $videos]);
     }
 
-    // public function login()
-    // {
-    //     return view('login');
-    // }
-
-    // public function register()
-    // {
-    //     return view('register');
-    // }
-
     public function dashboard()
     {
         $videos = Video::where('user_id', Auth::user()->id)->paginate(12);
