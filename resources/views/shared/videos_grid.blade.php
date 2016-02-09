@@ -16,15 +16,16 @@
        @foreach ($videos as $video)
             <div class="col-sm-4">
                 <div class="video-thumbnail">
-                    <a href="/playback/{{ $video->id }}" class="thumbnail">
+                    <a href="/playback/{{ $video->id }}" class="thumbnail" style="border: 0px;">
                     <img src="http://i1.ytimg.com/vi/{{ VideoIDExtractor::getVideoID($video->url) }}/hqdefault.jpg">
                     </a>
                     <h3>{{ str_limit($video->title, $limit = 40, $end = '...') }}</h3>
                     <h4 style="color: #aaa;">{{ $video->category }}</h4>
                     <p style="font-size:11px; color:#aaa;">Uploaded on: {{ date('F d, Y', strtotime($video->created_at)) }}</p>
                     <p>{{ str_limit($video->description, $limit = 200, $end = '...') }}</p>
+                    <hr style="visibility: hidden;" />
                     @if (Auth::check() && $currentRoute == 'dashboard')
-                        <div style="border: 0px solid gray; width:100%; position: absolute; bottom:0px; right:0px; float: right; font-size: 20px; text-align: right; margin: 3px;">
+                        <div class="video-options">
                             <a href="/video/edit/{{ $video->id }}" data-toggle="tooltip" title="Edit this video"><i class="fa fa-pencil-square-o"></i></a>
                             &nbsp;&nbsp;
                             <a href="#{{ $video->id }}" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a>
