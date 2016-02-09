@@ -51,10 +51,11 @@
                                     <label>Category</label>
                                     <select name="category" class="form-control" required>
                                         <option>{{ old('category') }}</option>
-                                        <option>Programming</option>
+                                        <option>Computing</option>
                                         <option>Science</option>
                                         <option>Technology</option>
-                                        <option>Languages</option>
+                                        <option>Engineering</option>
+                                        <option>Arts and Humanities</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

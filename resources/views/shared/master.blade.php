@@ -32,10 +32,11 @@
                         <ul class="dropdown-menu">
                             <li><a href="#">All Videos</a></li>
                             <li role="separator" class="divider"></li>
+                            <li><a href="#">Computing Videos</a></li>
                             <li><a href="#">Science Videos</a></li>
                             <li><a href="#">Technology Videos</a></li>
-                            <li><a href="#">Programming Videos</a></li>
-                            <li><a href="#">Languages Videos</a></li>
+                            <li><a href="#">Engineering Videos</a></li>
+                            <li><a href="#">Arts and Humanities Videos</a></li>
                         </ul>
                     </li>
                 </ul>

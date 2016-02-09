@@ -17,7 +17,7 @@
             <div class="col-sm-4">
                 <div class="video-thumbnail">
                     <a href="/playback/{{ $video->id }}" class="thumbnail">
-                        <img src="http://i1.ytimg.com/vi/{{ VideoIDExtractor::getVideoID($video->url) }}/hqdefault.jpg">
+                    <img src="http://i1.ytimg.com/vi/{{ VideoIDExtractor::getVideoID($video->url) }}/hqdefault.jpg">
                     </a>
                     <h3>{{ str_limit($video->title, $limit = 40, $end = '...') }}</h3>
                     <h4>{{ $video->category }}</h4>
