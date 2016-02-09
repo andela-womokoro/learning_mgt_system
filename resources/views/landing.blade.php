@@ -39,7 +39,7 @@
 </div>
 
 <!-- Videos grid -->
-<div class="container-fluid">
+<div class="container-fluid content">
     <div class="row videos-grid">
         <div class="col-sm-12">
             @include('shared.videos_grid')

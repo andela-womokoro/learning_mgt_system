@@ -2,10 +2,9 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div class="container-fluid" style="background-color: #fff; font-family: arial;">
+    <div class="container-fluid content" style="background-color: #fff; font-family: arial;">
         <div class="row">
             <div class="col-sm-12">
-                {{ Auth::user()->avatar }}
                 <h3 style="color: #555;">Dashboard</h3>
                 <ul class="nav nav-tabs">
                     @if (isset($upload_message))

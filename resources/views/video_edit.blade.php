@@ -2,7 +2,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div class="container-fluid" style="font-family: arial;">
+    <div class="container-fluid content" style="font-family: arial;">
         <div class="row">
             <div class="col-sm-12">
                 <br />
