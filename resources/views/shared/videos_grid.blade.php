@@ -21,7 +21,7 @@
                 @endif
             </div>
         @else
-            @if ($currentRoute != 'dashboard')
+            @if (! Auth::check())
                 <h2 style="text-align: center; color: #fc6f43; font-family: Helvetica,sans-serif;">Join a growing global community of online publishers and learners</h2>
             @endif
         @endif
