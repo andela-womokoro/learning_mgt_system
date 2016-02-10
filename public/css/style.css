@@ -88,6 +88,10 @@ a:hover {
     color: #5f7dbb;
 }
 
+.thumbnail:hover {
+    opacity: 0.7;
+}
+
 .video-thumbnail {
     border-top: 1px solid #ddd;
     border-right: 1px solid #ddd;
