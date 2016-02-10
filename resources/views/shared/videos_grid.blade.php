@@ -1,6 +1,6 @@
 <!-- display videos -->
     @if (Auth::check() && $pageIsDashboard)
-        <h4>My Videos</h4>
+
         @if (isset($message))
             <div class="alert alert-info" role="alert">
                 {{ $message }}

@@ -8,7 +8,7 @@
     <div class="container-fluid content">
         <div class="row">
             <div class="col-sm-12">
-                <h3 style="color: #555;">Dashboard</h3>
+                <h3 style="color: #555;">Dashboard - <span style="color: #999;">My Videos</span></h3>
             </div>
         </div>
         <div class="row">
