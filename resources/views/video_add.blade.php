@@ -41,11 +41,9 @@
                             <label>Category</label>
                             <select name="category" class="form-control" required>
                                 <option>{{ old('category') }}</option>
-                                <option>Computing</option>
-                                <option>Science</option>
-                                <option>Technology</option>
-                                <option>Engineering</option>
-                                <option>Arts And Humanities</option>
+                                @for ($i = 0; $i < count(VideoCategories::getCategories()); $i++)
+                                    <option>{{ VideoCategories::getCategories()[$i] }}</option>
+                                @endfor
                             </select>
                         </div>
                         <div class="form-group">

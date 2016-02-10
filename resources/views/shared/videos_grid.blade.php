@@ -1,6 +1,5 @@
 <!-- display videos -->
     @if (Auth::check() && $pageIsDashboard)
-
         @if (isset($message))
             <div class="alert alert-info" role="alert">
                 {{ $message }}

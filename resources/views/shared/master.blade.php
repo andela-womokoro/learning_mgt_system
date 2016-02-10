@@ -32,11 +32,9 @@
                         <ul class="dropdown-menu">
                             <li><a href="/">All Videos</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="/videos/computing">Computing Videos</a></li>
-                            <li><a href="/videos/science">Science Videos</a></li>
-                            <li><a href="/videos/technology">Technology Videos</a></li>
-                            <li><a href="/videos/engineering">Engineering Videos</a></li>
-                            <li><a href="/videos/arts_and_humanities">Arts And Humanities Videos</a></li>
+                            @for ($i = 0; $i < count(VideoCategories::getCategories()); $i++)
+                                <li><a href="/videos/{{ VideoCategories::getCategories()[$i] }}">{{ VideoCategories::getCategories()[$i] }}</a></li>
+                            @endfor
                         </ul>
                     </li>
                 </ul>
