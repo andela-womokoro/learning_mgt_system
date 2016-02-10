@@ -7,6 +7,7 @@ use Input;
 use Cloudder;
 use App\User;
 use App\Video;
+use VideoCategories;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,9 +19,18 @@ class VideosController extends Controller
     {
         $category = ucwords(strtolower(str_replace('_', ' ', $category)));
 
-        $videos = Video::where('category', '=', $category)->paginate(12);
+        // $videoCategories = VideoCategories::getCategories();
+        // dd($videoCategories);
+        //
+        // search $videoCategories array for $category
+        //
+        //  if (found) {
+                $videos = Video::where('category', '=', $category)->paginate(12);
 
-        return view('landing', ['videos' => $videos]);
+                return view('landing', ['videos' => $videos]);
+        //  } else {
+        //      return view('landing', ['videos' => $videos, 'error' => 'Invalid video category specified']);
+        //  }
     }
 
     public function playback($id)

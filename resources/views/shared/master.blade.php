@@ -33,7 +33,7 @@
                             <li><a href="/">All Videos</a></li>
                             <li role="separator" class="divider"></li>
                             @for ($i = 0; $i < count(VideoCategories::getCategories()); $i++)
-                                <li><a href="/videos/{{ VideoCategories::getCategories()[$i] }}">{{ VideoCategories::getCategories()[$i] }}</a></li>
+                                <li><a href="/videos/{{ strtolower(VideoCategories::getCategories()[$i]) }}">{{ VideoCategories::getCategories()[$i] }} Videos</a></li>
                             @endfor
                         </ul>
                     </li>
