@@ -20,13 +20,13 @@ View a live demo of Weblearn on heroku at [Weblearn](https://weblearn.herokuapp.
 - Video resources management (uploading, editing, deletion)
 
 ### Usage
-This step presumes that you have git set up and running.
+Install the following software before cloning the application from github.
 
 - Git
 - [Composer](https://getcomposer.org/doc/00-intro.md)
 - [Laravel homestead](http://laravel.com/docs/5.1/homestead)
 
-When you have completed the above processes, run:
+After installing the above software, clone from github:
 
 ```
 $ git clone https://github.com/andela-womokoro/learning_mgt_system
