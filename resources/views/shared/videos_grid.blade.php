@@ -1,20 +1,16 @@
-<?php
-    $currentRoute = Route::getCurrentRoute()->getPath();
-?>
-
 <!-- display videos -->
-    @if (Auth::check() && $currentRoute == 'dashboard')
+    @if (Auth::check() && $pageIsDashboard)
+        <h4>My Videos</h4>
         @if (isset($message))
             <div class="alert alert-info" role="alert">
                 {{ $message }}
             </div>
         @endif
-        <h4>My Videos</h4>
     @endif
     <div class="row videos-grid">
         @if ($videos->count() == 0)
             <div class="alert alert-info" role="alert">
-                @if (Auth::check() && $currentRoute == 'dashboard')
+                @if (Auth::check() && $pageIsDashboard)
                     {{ 'You currently have no videos. Click the "Upload Video" tab to upload a video from Youtube.' }}
                 @else
                     {{ 'There are currently no videos in the selected category.' }}
@@ -37,9 +33,9 @@
                     <p style="font-size:11px; color:#aaa;">Uploaded on: {{ date('F d, Y', strtotime($video->created_at)) }}</p>
                     <p>{{ str_limit($video->description, $limit = 200, $end = '...') }}</p>
                     <hr style="visibility: hidden;" />
-                    @if (Auth::check() && $currentRoute == 'dashboard')
+                    @if (Auth::check() && $pageIsDashboard)
                         <div class="video-options">
-                            <a href="/video/edit/{{ $video->id }}" data-toggle="tooltip" title="Edit this video"><i class="fa fa-pencil-square-o"></i></a>
+                            <a id="edit_icon" href="/video/edit/{{ $video->id }}" data-toggle="tooltip" title="Edit this video"><i class="fa fa-pencil-square-o"></i></a>
                             &nbsp;&nbsp;
                             <a href="#{{ $video->id }}" data-toggle="tooltip" title="Delete this video"><i class="fa fa-times"></i></a>
                         </div>

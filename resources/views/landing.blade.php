@@ -2,6 +2,9 @@
 @section('title', 'Home')
 
 @section('content')
+<?php
+    $pageIsDashboard = false;
+?>
 
 <!-- Carousel -->
 <div id="my-carousel" class="carousel slide" data-ride="carousel" style="margin-top: -20px">

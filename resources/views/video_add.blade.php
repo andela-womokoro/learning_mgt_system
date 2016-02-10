@@ -27,8 +27,8 @@
                                 </ul>
                             </div>
                         @endif
-                        @if (isset($upload_message))
-                            <div class="alert alert-info" role="alert">{{ $upload_message }}</div>
+                        @if (isset($message))
+                            <div class="alert alert-info" role="alert">{{ $message }}</div>
                         @endif
                         <div class="form-group">
                             <label>Video Title</label>

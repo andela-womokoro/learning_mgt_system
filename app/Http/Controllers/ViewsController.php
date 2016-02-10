@@ -22,7 +22,7 @@ class ViewsController extends Controller
 
     public function dashboard()
     {
-        $videos = Video::where('user_id', Auth::user()->id)->paginate(12);
+        $videos = Video::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
 
         return view('dashboard', ['videos' => $videos]);
     }

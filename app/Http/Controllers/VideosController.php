@@ -53,7 +53,9 @@ class VideosController extends Controller
             'url' => $request->input('url')
         ]);
 
-        return view('video_add', ['upload_message' => 'The video has been successfully uploaded.']);
+        $videos = Video::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
+
+        return view('dashboard', ['videos' => $videos, 'message' => 'The video has been successfully uploaded.']);
     }
 
     public function getEditVideo($id)
@@ -72,7 +74,7 @@ class VideosController extends Controller
         $video->description = $request->input('description');
         $video->save();
 
-        return view('video_edit', ['video' => $video, 'message' => 'You changes have been saved.']);
+        return view('video_edit', ['video' => $video, 'message' => 'Your changes have been saved.']);
     }
 
     public function deleteVideo(Request $request)
@@ -81,7 +83,7 @@ class VideosController extends Controller
         $videoTitle = $video->title;
         $video->delete();
 
-        $videos = Video::orderBy('created_at', 'desc')->paginate(12);
+        $videos = Video::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
 
         return view('dashboard', ['videos' => $videos, 'message' => 'The video "'.$videoTitle.'" was deleted.']);
     }
