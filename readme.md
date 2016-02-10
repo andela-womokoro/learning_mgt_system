@@ -9,7 +9,7 @@ Registered users can publish learning videos on the site by uploading Youtube li
 Weblearn was built with PHP's Laravel framework.
 
 ### <a name="demo"></a>Demo
-View a live demo of Weblearn on heroku at [TechLMS](https://weblearn.herokuapp.com/).
+View a live demo of Weblearn on heroku at [Weblearn](https://weblearn.herokuapp.com/).
 
 ### Contributors
 
