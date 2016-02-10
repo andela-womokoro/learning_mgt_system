@@ -22,8 +22,13 @@ class ViewsController extends Controller
 
     public function dashboard()
     {
+        return view('dashboard', ['videos' => $this->getLoggedInUserVideos()]);
+    }
+
+    public static function getLoggedInUserVideos()
+    {
         $videos = Video::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
 
-        return view('dashboard', ['videos' => $videos]);
+        return $videos;
     }
 }

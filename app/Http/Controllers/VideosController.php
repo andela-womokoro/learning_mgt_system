@@ -10,6 +10,7 @@ use App\Video;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ViewsController;
 
 class VideosController extends Controller
 {
@@ -53,7 +54,7 @@ class VideosController extends Controller
             'url' => $request->input('url')
         ]);
 
-        $videos = Video::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
+        $videos = ViewsController::getLoggedInUserVideos();
 
         return view('dashboard', ['videos' => $videos, 'message' => 'The video has been successfully uploaded.']);
     }
@@ -74,7 +75,9 @@ class VideosController extends Controller
         $video->description = $request->input('description');
         $video->save();
 
-        return view('video_edit', ['video' => $video, 'message' => 'Your changes have been saved.']);
+        $videos = ViewsController::getLoggedInUserVideos();
+
+        return view('dashboard', ['videos' => $videos, 'message' => 'Your changes have been saved.']);
     }
 
     public function deleteVideo(Request $request)
@@ -83,7 +86,7 @@ class VideosController extends Controller
         $videoTitle = $video->title;
         $video->delete();
 
-        $videos = Video::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(12);
+        $videos = ViewsController::getLoggedInUserVideos();
 
         return view('dashboard', ['videos' => $videos, 'message' => 'The video "'.$videoTitle.'" was deleted.']);
     }
