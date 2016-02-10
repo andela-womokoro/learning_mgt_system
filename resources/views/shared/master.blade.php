@@ -36,7 +36,7 @@
                             <li><a href="/videos/Science">Science Videos</a></li>
                             <li><a href="/videos/Technology">Technology Videos</a></li>
                             <li><a href="/videos/Engineering">Engineering Videos</a></li>
-                            <li><a href="/videos/Arts_and_Humanities">Arts and Humanities Videos</a></li>
+                            <li><a href="/videos/Arts_and_Humanities">Arts And Humanities Videos</a></li>
                         </ul>
                     </li>
                 </ul>

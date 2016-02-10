@@ -15,7 +15,7 @@ class VideosController extends Controller
 {
     public function videoCategories($category)
     {
-        $category = str_replace('_', ' ', $category);
+        $category = ucwords(strtolower(str_replace('_', ' ', $category)));
 
         $videos = Video::where('category', '=', $category)->paginate(12);
 
@@ -52,8 +52,6 @@ class VideosController extends Controller
             'description' => $request->input('description'),
             'url' => $request->input('url')
         ]);
-
-        // $videos = Video::where('user_id', Auth::user()->id)->paginate(12);
 
         return view('video_add', ['upload_message' => 'The video has been successfully uploaded.']);
     }

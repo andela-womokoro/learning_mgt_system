@@ -45,7 +45,7 @@
                                 <option>Science</option>
                                 <option>Technology</option>
                                 <option>Engineering</option>
-                                <option>Arts and Humanities</option>
+                                <option>Arts And Humanities</option>
                             </select>
                         </div>
                         <div class="form-group">
