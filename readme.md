@@ -26,12 +26,11 @@ Install the following software before cloning the application from github.
 - [Composer](https://getcomposer.org/doc/00-intro.md)
 - [Laravel homestead](http://laravel.com/docs/5.1/homestead)
 
-After installing the above software, clone from github:
+After installing the above software, clone the repository from github into your working directory:
 
 ```
 $ git clone https://github.com/andela-womokoro/learning_mgt_system
 `````
-to clone the repository to your working directory.
 
 Run
 
