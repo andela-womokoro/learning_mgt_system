@@ -13,17 +13,16 @@ class LoginTest extends TestCase
     public function testSignIn()
     {
         factory(App\User::class)->create([
-            'username' => 'testuser',
             'email' => 'test@domain.com',
             'password' => bcrypt('password'),
+            'username' => 'testuser',
         ]);
 
         $this->visit('/auth/login')
             ->type('test@domain.com', 'email')
             ->type('password', 'password')
-            ->check('rememberMe')
+            ->check('remember')
             ->press('Sign me in')
-            ->seePageIs('/dashboard')
             ->see('Dashboard');
     }
 }
