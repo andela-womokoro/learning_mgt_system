@@ -18,7 +18,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-7">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
                 <h3>{{ $video->title }}</h3>
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/{{ VideoIDExtractor::getVideoID($video->url) }}" allowfullscreen></iframe>
@@ -27,6 +28,7 @@
                 <p style="font-size:11px; color:#aaa;">Uploaded on: {{ date('F d, Y', strtotime($video->created_at)) }}</p>
                 <p>{{ $video->description }}</p>
             </div>
+            <div class="col-sm-2"></div>
         </div>
     </div>
 @endsection
