@@ -1,6 +1,7 @@
 ## Weblearn
 
 [![Build Status](https://travis-ci.org/andela-womokoro/learning_mgt_system.svg)](https://travis-ci.org/andela-womokoro/learning_mgt_system)
+[![Coverage Status](https://coveralls.io/repos/andela-womokoro/learning_mgt_system/badge.svg?branch=master&service=github)](https://coveralls.io/github/andela-womokoro/learning_mgt_system?branch=master)
 
 Weblearn is an online video learning resource website. Learning videos are categorized and users can view videos on the site based on their chosen category.
 
