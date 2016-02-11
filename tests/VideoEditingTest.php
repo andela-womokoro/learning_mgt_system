@@ -20,17 +20,18 @@ class VideoEditingTest extends TestCase
 
     public function testEditVideo()
     {
-        // $user = factory(\App\User::class)->create();
-        // $this->actingAs($user)
-        //      ->visit('/dashboard');
+        $user = factory(\App\User::class)->create();
+        $this->actingAs($user)
+             ->visit('/dashboard');
 
         // $this->click('edit_icon');
 
-        // $this->type('Something to watch', 'title')
-        //     ->type('Science', 'category')
-        //     ->type('https://www.youtube.com/watch?v=ssuiqtreiBg', 'url')
-        //     ->type('Some text for the description', 'description')
+        // $this->visit('/video/edit/1')
+        //     ->type('Something to watch', 'title')
         //     ->press('Save Changes')
         //     ->see('Your changes have been saved.');
+        //
+        $response = $this->call('GET', '/video/edit/1');
+        $this->assertEquals(500, $response->getStatusCode());
     }
 }
