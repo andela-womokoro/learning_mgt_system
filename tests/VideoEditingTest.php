@@ -6,6 +6,17 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class VideoEditingTest extends TestCase
 {
+    public function testVideoCategories()
+    {
+        $this->visit('/videos/testcategory')
+            ->see('Testcategory');
+    }
+
+    // public function testPlayback()
+    // {
+
+    // }
+
     public function testEditVideo()
     {
         // $user = factory(\App\User::class)->create();

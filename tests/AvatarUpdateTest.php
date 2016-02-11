@@ -15,9 +15,5 @@ class AvatarUpdateTest extends TestCase
              ->visit('/dashboard');
 
         $this->click('My Profile')->see('My Profile');
-
-        // $this->attach($absolutePathToFile, 'avatar_file')
-        //     ->press('Update Avatar')
-        //     ->see('You have successfully updated your avatar.');
     }
 }
