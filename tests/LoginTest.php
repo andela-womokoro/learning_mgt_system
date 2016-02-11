@@ -37,4 +37,13 @@ class LoginTest extends TestCase
         $this->visit('/auth/logout')
             ->see('email');
     }
+
+    public function testSocialMediaLogin()
+    {
+        // $this->visit('/auth/twitter')
+        //     ->see('Dashboard');
+
+        $response = $this->call('GET', '/auth/twitter');
+        $this->assertEquals(302, $response->getStatusCode());
+    }
 }
