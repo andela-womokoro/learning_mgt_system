@@ -38,11 +38,6 @@ class VideoEditingTest extends TestCase
         $this->actingAs($user)
              ->visit('/dashboard');
 
-        // $this->visit('/video/edit/{1}')
-        //     ->type('Something to watch', 'title')
-        //     ->press('Save Changes')
-        //     ->see('Your changes have been saved.');
-
         $response = $this->call('POST', '/video/edit/1');
         $this->assertEquals(500, $response->getStatusCode());
     }
