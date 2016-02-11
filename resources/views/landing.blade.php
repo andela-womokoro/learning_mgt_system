@@ -17,19 +17,19 @@
         <div class="item active">
             <img src="/images/pic1.jpg" class="img-responsive" width="100%" alt="...">
             <div class="carousel-caption">
-                <h3>Caption Text 1</h3>
+                <h3>Bright minds. Bright ideas. Great educational video resources at your disposal.</h3>
             </div>
         </div>
         <div class="item">
             <img src="/images/pic2.jpg" class="img-responsive" width="100%" alt="...">
             <div class="carousel-caption">
-                <h3>Caption Text 2</h3>
+                <h3>Learning is no longer restricted to classrooms and campuses.</h3>
             </div>
         </div>
         <div class="item">
             <img src="/images/pic3.jpg" class="img-responsive" width="100%" alt="...">
             <div class="carousel-caption">
-                <h3>Caption Text 3</h3>
+                <h3>Deviate from tradition. Learn in a fun and intuitive way.</h3>
             </div>
         </div>
     </div>
