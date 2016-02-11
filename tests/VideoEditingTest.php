@@ -47,7 +47,7 @@ class VideoEditingTest extends TestCase
         $this->assertEquals(500, $response->getStatusCode());
     }
 
-    public function testGetDeleteVideo()
+    public function testDeleteVideo()
     {
         $user = factory(\App\User::class)->create();
         $this->actingAs($user)
