@@ -25,4 +25,16 @@ class LoginTest extends TestCase
             ->press('Sign me in')
             ->see('Dashboard');
     }
+
+    public function testSignOut()
+    {
+        factory(App\User::class)->create([
+            'email' => 'test@domain.com',
+            'password' => bcrypt('password'),
+            'username' => 'testuser',
+        ]);
+
+        $this->visit('/auth/logout')
+            ->see('email');
+    }
 }
