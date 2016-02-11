@@ -11,4 +11,15 @@ class ViewsTest extends TestCase
         $response = $this->call('GET', '/blablabla');
         $this->assertEquals(404, $response->getStatusCode());
     }
+
+    public function testSignInLinkOnLandingPage()
+    {
+        $this->visit('/')->see('Sign in')->assertResponseStatus('200');
+    }
+
+    public function testRegLinkOnLandingPage()
+    {
+        $this->visit('/')->see('Register')->assertResponseStatus('200');
+    }
+
 }

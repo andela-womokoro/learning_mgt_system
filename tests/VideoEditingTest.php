@@ -6,6 +6,10 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class VideoEditingTest extends TestCase
 {
+    use DatabaseTransactions;
+
+    protected $baseUrl = 'http://checkpoint4.app';
+
     public function testVideoCategories()
     {
         $this->visit('/videos/testcategory')
@@ -24,13 +28,6 @@ class VideoEditingTest extends TestCase
         $this->actingAs($user)
              ->visit('/dashboard');
 
-        // $this->click('edit_icon');
-
-        // $this->visit('/video/edit/1')
-        //     ->type('Something to watch', 'title')
-        //     ->press('Save Changes')
-        //     ->see('Your changes have been saved.');
-        //
         $response = $this->call('GET', '/video/edit/1');
         $this->assertEquals(500, $response->getStatusCode());
     }
@@ -40,6 +37,11 @@ class VideoEditingTest extends TestCase
         $user = factory(\App\User::class)->create();
         $this->actingAs($user)
              ->visit('/dashboard');
+
+        // $this->visit('/video/edit/{1}')
+        //     ->type('Something to watch', 'title')
+        //     ->press('Save Changes')
+        //     ->see('Your changes have been saved.');
 
         $response = $this->call('POST', '/video/edit/1');
         $this->assertEquals(500, $response->getStatusCode());

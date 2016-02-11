@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -40,9 +41,6 @@ class LoginTest extends TestCase
 
     public function testSocialMediaLogin()
     {
-        // $this->visit('/auth/twitter')
-        //     ->see('Dashboard');
-
         $response = $this->call('GET', '/auth/twitter');
         $this->assertEquals(302, $response->getStatusCode());
     }
