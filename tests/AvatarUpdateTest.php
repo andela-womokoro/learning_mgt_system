@@ -16,4 +16,14 @@ class AvatarUpdateTest extends TestCase
 
         $this->click('My Profile')->see('My Profile');
     }
+
+    public function testUploadAvatar()
+    {
+        $user = factory(\App\User::class)->create();
+        $this->actingAs($user)
+             ->visit('/dashboard');
+
+        $this->visit('/profile');
+        $this->call('POST', '/profile/update/avatar', ['avatar' => ' /images/avatar.png', '_token' => csrf_token() ]);
+    }
 }
