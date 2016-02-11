@@ -25,7 +25,7 @@ class VideosController extends Controller
         if (in_array($category, $videoCategories)) {
             return view('landing', ['videos' => $videos]);
         } else {
-            return view('landing', ['videos' => $videos, 'error' => '"'.$category.'" is not a valid video category. Please select a valid category from the "Explore" menu above.']);
+            return view('errors.error_page', ['error' => '"'.$category.'" is not a valid video category. Please select a valid category from the "Explore" menu above.']);
         }
     }
 
@@ -33,7 +33,11 @@ class VideosController extends Controller
     {
         $video = Video::find($id);
 
-        return view('playback', ['video' => $video]);
+        if (is_null($video)) {
+            return view('errors.error_page', ['error' => 'The video you tried to play was not found.']);
+        } else {
+            return view('playback', ['video' => $video]);
+        }
     }
 
     public function getAddVideo()

@@ -12,10 +12,11 @@ class VideoEditingTest extends TestCase
             ->see('Testcategory');
     }
 
-    // public function testPlayback()
-    // {
-
-    // }
+    public function testPlayback()
+    {
+        $this->visit('/playback/999999')
+            ->see('error');
+    }
 
     public function testEditVideo()
     {
