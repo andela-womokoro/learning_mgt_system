@@ -15,6 +15,11 @@ use App\Http\Controllers\ViewsController;
 
 class VideosController extends Controller
 {
+    /**
+     * Fetch videos of a particular category from the database based on user's category selection. If an invalid
+     *  category is specified in the route an erro message is returned
+     * @param  $category
+     */
     public function videoCategories($category)
     {
         $category = ucwords(strtolower(str_replace('_', ' ', $category)));
@@ -29,6 +34,10 @@ class VideosController extends Controller
         }
     }
 
+    /**
+     * Redirects users to the video playback page and returns the selected video to the page
+     * @param  $id  the video ID
+     */
     public function playback($id)
     {
         $video = Video::find($id);
@@ -40,11 +49,18 @@ class VideosController extends Controller
         }
     }
 
+    /**
+     * Redirects users to the video upload page
+     */
     public function getAddVideo()
     {
         return view('video_add');
     }
 
+    /**
+     * Post videos uploaded by users to the database
+     * @param  Request $request
+     */
     public function postAddVideo(Request $request)
     {
         $this->validate($request, [
@@ -69,6 +85,10 @@ class VideosController extends Controller
         return view('dashboard', ['videos' => $videos, 'message' => 'The video has been successfully uploaded.']);
     }
 
+    /**
+     * Redirect users to the video details editing page
+     * @param  $id  the id oof the video
+     */
     public function getEditVideo($id)
     {
         $video = Video::find($id);
@@ -76,6 +96,9 @@ class VideosController extends Controller
         return view('video_edit', ['video' => $video]);
     }
 
+    /**
+     * Save the edited video details overwriting previous data.
+     */
     public function postEditVideo(Request $request, $id)
     {
         $video = Video::find($id);
@@ -90,6 +113,9 @@ class VideosController extends Controller
         return view('dashboard', ['videos' => $videos, 'message' => 'Your changes have been saved.']);
     }
 
+    /**
+     * Delete a user's uploaded video resource from the database
+     */
     public function deleteVideo(Request $request)
     {
         $video = Video::find($request->input('id'));
