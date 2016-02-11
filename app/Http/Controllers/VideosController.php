@@ -25,7 +25,7 @@ class VideosController extends Controller
         if (in_array($category, $videoCategories)) {
             return view('landing', ['videos' => $videos]);
         } else {
-            return view('landing', ['videos' => $videos, 'error' => '"'.$category.'" is not a valid video category. Please select a valid video from the "Explore" menu above.']);
+            return view('landing', ['videos' => $videos, 'error' => '"'.$category.'" is not a valid video category. Please select a valid category from the "Explore" menu above.']);
         }
     }
 
