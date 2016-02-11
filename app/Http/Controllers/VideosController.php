@@ -18,19 +18,15 @@ class VideosController extends Controller
     public function videoCategories($category)
     {
         $category = ucwords(strtolower(str_replace('_', ' ', $category)));
+        $videoCategories = VideoCategories::getCategories();
 
-        // $videoCategories = VideoCategories::getCategories();
-        // dd($videoCategories);
-        //
-        // search $videoCategories array for $category
-        //
-        //  if (found) {
-                $videos = Video::where('category', '=', $category)->paginate(12);
+        $videos = Video::where('category', '=', $category)->paginate(12);
 
-                return view('landing', ['videos' => $videos]);
-        //  } else {
-        //      return view('landing', ['videos' => $videos, 'error' => 'Invalid video category specified']);
-        //  }
+        if (in_array($category, $videoCategories)) {
+            return view('landing', ['videos' => $videos]);
+        } else {
+            return view('landing', ['videos' => $videos, 'error' => '"'.$category.'" is not a valid video category. Please select a valid video from the "Explore" menu above.']);
+        }
     }
 
     public function playback($id)

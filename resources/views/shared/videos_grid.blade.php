@@ -12,7 +12,7 @@
                 @if (Auth::check() && $pageIsDashboard)
                     {{ 'You currently have no videos. Click the "Upload Video" tab to upload a video from Youtube.' }}
                 @else
-                    {{ 'There are currently no videos in the selected category.' }}
+                    {{ 'There are currently no videos under the selected category.' }}
                 @endif
             </div>
         @else

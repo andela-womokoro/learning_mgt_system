@@ -45,7 +45,13 @@
 <div class="container-fluid content">
     <div class="row videos-grid">
         <div class="col-sm-12">
-            @include('shared.videos_grid')
+            @if (isset($error))
+                <div class="alert alert-info" role="alert">
+                    {{ $error }}
+                </div>
+            @else
+                @include('shared.videos_grid')
+            @endif
         </div>
     </div>
 </div>
