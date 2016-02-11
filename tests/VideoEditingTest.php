@@ -18,7 +18,7 @@ class VideoEditingTest extends TestCase
             ->see('error');
     }
 
-    public function testEditVideo()
+    public function testGetEditVideo()
     {
         $user = factory(\App\User::class)->create();
         $this->actingAs($user)
@@ -32,6 +32,26 @@ class VideoEditingTest extends TestCase
         //     ->see('Your changes have been saved.');
         //
         $response = $this->call('GET', '/video/edit/1');
+        $this->assertEquals(500, $response->getStatusCode());
+    }
+
+    public function testPostEditVideo()
+    {
+        $user = factory(\App\User::class)->create();
+        $this->actingAs($user)
+             ->visit('/dashboard');
+
+        $response = $this->call('POST', '/video/edit/1');
+        $this->assertEquals(500, $response->getStatusCode());
+    }
+
+    public function testGetDeleteVideo()
+    {
+        $user = factory(\App\User::class)->create();
+        $this->actingAs($user)
+             ->visit('/dashboard');
+
+        $response = $this->call('POST', '/video/delete/1');
         $this->assertEquals(500, $response->getStatusCode());
     }
 }
