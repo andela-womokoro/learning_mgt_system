@@ -80,7 +80,7 @@
         <div class="container">
            <div class="row">
                 <div class="col-md-12" style="padding-top: 25px; text-align: center;">
-                    Copyright &copy; 2016, Weblearn. All rights reserved. Powered by <a href="https://laravel.com/">Laravel</a>. Designed by <a href="https://github.com/andela-womokoro">Wilson Omokoro</a> for <a href="http://www.andela.com/">Andela</a>.
+                    Copyright &copy; 2016, Weblearn. All rights reserved. Powered by <a href="https://laravel.com/">Laravel</a>. Designed by <a href="https://github.com/andela-womokoro">Wilson Omokoro</a> from <a href="http://www.andela.com/">Andela</a>.
                 </div>
             </div>
         </div>
