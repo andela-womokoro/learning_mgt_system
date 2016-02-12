@@ -1,5 +1,5 @@
 @extends('shared.master')
-@section('title', 'Dashboard')
+@section('title', 'Add Video')
 
 @section('content')
     <div class="container-fluid content" style="font-family: arial;">

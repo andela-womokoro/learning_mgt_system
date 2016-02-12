@@ -1,5 +1,5 @@
 @extends('shared.master')
-@section('title', 'Dashboard')
+@section('title', 'Playback')
 
 @section('content')
     <div class="container-fluid content">
